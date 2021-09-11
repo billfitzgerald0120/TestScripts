@@ -1,0 +1,36 @@
+In status-board environment.
+
+1. make rebuild-database 
+2. ./status-board serve --enable-ocm-mock
+
+Make a new directory, copy all files and run from there
+
+./runtests.sh Fred
+
+or
+
+ ./runtests.sh Fred 2 Y 
+
+Loglevel set to 2 above (0-5)
+Skip Deletes set to Y (only option is Y to skip)
+
+cat error.txt | more - To list errors
+cat info.txt | more - For info
+cat stats.txt - Historical csv file
+
+run as many as you like, just change the name (Fred).
+
+I have included a sql query that displays some of the info.
+Just change the file location below to match your environment.
+
+psql -d status-board -U status-board-user -f "/Users/wfitzger/sdsutils/get_services.sql"
+
+List of modules so far:
+runtests.sh
+sub_post_statuses.sh
+sub_patch_endpoint.sh
+sub_maintenance_windows.sh
+sub_bad_patches.sh
+sub_bad_post_dependencies.sh
+sub_bad_post_statuses.sh
+sub_delete_all.sh
