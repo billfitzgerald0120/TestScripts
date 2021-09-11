@@ -3,7 +3,11 @@ In status-board environment.
 1. make rebuild-database 
 2. ./status-board serve --enable-ocm-mock
 
-Make a new directory, copy all files and run from there
+In Terminal:
+
+3. Make a new directory
+4. git clone https://github.com/billfitzgerald0120/TestScripts
+ and run from there
 
 ./runtests.sh Fred
 
@@ -23,7 +27,7 @@ run as many as you like, just change the name (Fred).
 I have included a sql query that displays some of the info.
 Just change the file location below to match your environment.
 
-psql -d status-board -U status-board-user -f "/Users/wfitzger/sdsutils/get_services.sql"
+psql -d status-board -U status-board-user -f "/Users/wfitzger/sbtogo/TestScripts/get_services.sql"
 
 List of modules so far:
 runtests.sh
