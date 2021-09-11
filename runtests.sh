@@ -55,6 +55,9 @@ NOW=$(date +"%c")
 logThis "INFO" "runtests.sh begins $NOW"
 echo "runtests.sh begins $NOW" > error.txt
 echo "runtests.sh begins $NOW" > info.txt
+echo "Script executed from: ${PWD}"
+echo "Script executed from: ${PWD}" > info.txt
+
 logThis "INFO" "Let's build a model with everything in it called : $1"
 logThis "INFO" "calls ./sub_post_statuses.sh" >> info.txt
 logThis "INFO" "calls ./sub_patch_endpoint.sh" >> info.txt
@@ -566,4 +569,4 @@ logThis "INFO" "cat stats.csv        - For Stats"
 logThis "ERROR" "Stats: total <$i>, pass <$pass>, fail <$fail>, good <$good>, bad <$bad>, posts <$post>, gets <$get>, deletes <$delete>, patches <$patch>"
 
 read -p "Press <enter> to See Sql info OR cntl-c to Exit ..."
-psql -d status-board -U status-board-user -f "/Users/wfitzger/sdsutils/get_services.sql";
+psql -d status-board -U status-board-user -f "${PWD}/get_services.sql";
